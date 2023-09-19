@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hotel_app/components/hotel_first_widget.dart';
+import 'package:hotel_app/components/hotel_image_scroll_card.dart';
+import 'package:hotel_app/components/hotel_rating.dart';
+import 'package:hotel_app/components/hotel_second_widget.dart';
+import 'package:hotel_app/data/hotel_bloc/hotel_bloc.dart';
+import 'package:hotel_app/data/hotel_bloc/hotel_repository.dart';
+import 'package:hotel_app/models/hotel.dart';
+import 'package:hotel_app/pages/room_page.dart';
+
+void main() {
+  runApp(HotelPage());
+}
+
+class HotelPage extends StatefulWidget {
+  @override
+  State<HotelPage> createState() => _HotelPageState();
+}
+
+class _HotelPageState extends State<HotelPage> {
+  final _hotelBloc = HotelBloc();
+
+  @override
+  void initState() {
+    _hotelBloc.add(LoadHotel());
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return MaterialApp(
+      theme: ThemeData.light(),
+      home: Scaffold(
+          extendBodyBehindAppBar: true,
+          backgroundColor: const Color.fromARGB(255, 243, 243, 243),
+          body: BlocBuilder<HotelBloc, HotelState>(
+            bloc: _hotelBloc,
+            builder: (context, state) {
+              
+              if (state is HotelLoaded) {
+                return SingleChildScrollView(
+                    child: Column(
+                  children: [
+                    HotelFirstWidget(hotel: state.hotelList.first),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    HotelSecondWidget(hotel: state.hotelList.first),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    SizedBox(
+                        width: 343,
+                        height: 48,
+                        child: Builder(builder: (context) {
+                          return ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => const RoomPage()),
+                              );
+                            },
+                            child: Text(
+                              "К выбору номера",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'SF',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              )),
+                            ),
+                          );
+                        }))
+                  ],
+                ));
+              }
+              return Center(child: CircularProgressIndicator());
+            },
+          )
+
+          // ((_hotelList == null) || (_hotelList!.isEmpty))
+          //     ? Center(child: CircularProgressIndicator())
+          //     : SingleChildScrollView(
+          //         child: Column(
+          //         children: [
+          //           HotelFirstWidget(hotel: _hotelList!.first),
+          //           SizedBox(
+          //             height: 8,
+          //           ),
+          //           HotelSecondWidget(hotel:_hotelList!.first),
+          //           SizedBox(
+          //             height: 8,
+          //           ),
+          //           SizedBox(
+          //               width: 343,
+          //               height: 48,
+          //               child: Builder(builder: (context) {
+          //                 return ElevatedButton(
+          //                   onPressed: () {
+          //                     Navigator.of(context).push(
+          //                       MaterialPageRoute(
+          //                           builder: (context) => const RoomPage()),
+          //                     );
+          //                   },
+          //                   child: Text(
+          //                     "К выбору номера",
+          //                     style: TextStyle(
+          //                       fontSize: 16,
+          //                       fontFamily: 'SF',
+          //                       fontWeight: FontWeight.w500,
+          //                     ),
+          //                   ),
+          //                   style: ButtonStyle(
+          //                     shape: MaterialStateProperty.all<
+          //                         RoundedRectangleBorder>(RoundedRectangleBorder(
+          //                       borderRadius: BorderRadius.circular(15.0),
+          //                     )),
+          //                   ),
+          //                 );
+          //               }))
+          //         ],
+          //       )),
+          ),
+    );
+  }
+}
