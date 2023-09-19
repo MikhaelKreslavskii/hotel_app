@@ -148,7 +148,7 @@ class _BookingPageState extends State<BookingPage> {
                             );
                     }
                   },
-                  child: Text("Оплатить ${state.booking.tourPrice}")),
+                  child: Text("Оплатить ${state.booking.tourPrice} Р", style: TextStyle(fontFamily: 'SF', fontSize: 16, fontWeight: FontWeight.w500) ,)),
             ),
           )
         ]),

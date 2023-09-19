@@ -149,7 +149,7 @@ class _BookingTouristWidgetState extends State<BookingTouristWidget> {
                         padding: const EdgeInsets.only(
                             left: 16.0, top: 8, right: 16),
                         child: TextFormField(
-                          ////controller: _nameController,
+                          controller: _nameController,
                           validator: _validatorName,
                           focusNode: _nameFocus,
                           onFieldSubmitted: (_) {
