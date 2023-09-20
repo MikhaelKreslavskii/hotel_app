@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../models/hotel.dart';
+
+import '../../models/hotel.dart';
 import 'hotel_image_scroll_card.dart';
 import 'hotel_rating.dart';
 

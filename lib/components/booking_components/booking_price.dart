@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/components/booking_price_tile.dart';
 
-import '../models/booking.dart';
+import '../../models/booking.dart';
 import 'booking_data_tile.dart';
+import 'booking_price_tile.dart';
 
 class BookingPrice extends StatefulWidget {
   final Booking booking;

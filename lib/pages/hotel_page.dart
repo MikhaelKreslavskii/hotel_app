@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_app/components/hotel_first_widget.dart';
-import 'package:hotel_app/components/hotel_image_scroll_card.dart';
-import 'package:hotel_app/components/hotel_rating.dart';
-import 'package:hotel_app/components/hotel_second_widget.dart';
+
 import 'package:hotel_app/data/hotel_bloc/hotel_bloc.dart';
 import 'package:hotel_app/data/hotel_bloc/hotel_repository.dart';
 import 'package:hotel_app/models/hotel.dart';
 import 'package:hotel_app/pages/room_page.dart';
 
-void main() {
-  runApp(HotelPage());
-}
+import '../components/hotel_components/hotel_first_widget.dart';
+import '../components/hotel_components/hotel_second_widget.dart';
+
 
 class HotelPage extends StatefulWidget {
   @override

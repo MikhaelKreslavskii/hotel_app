@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/components/hotel_parametrs_list.dart';
-import 'package:hotel_app/components/hotel_peculiarities_tile.dart';
+import 'package:hotel_app/components/hotel_components/hotel_parametrs_list.dart';
+import 'package:hotel_app/components/hotel_components/hotel_peculiarities_tile.dart';
 
-import '../models/hotel.dart';
-import '../models/room.dart';
+import '../../models/hotel.dart';
 
 class HotelSecondWidget extends StatelessWidget {
   final Hotel hotel;

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/components/hotel_rating.dart';
 
-import '../models/booking.dart';
+import '../../models/booking.dart';
+import '../hotel_components/hotel_rating.dart';
+
 
 class BookingHotelWidget extends StatelessWidget {
   final Booking hotel;

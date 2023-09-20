@@ -1,11 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:hotel_app/components/hotel_image_scroll_card.dart';
-import 'package:hotel_app/components/room_peculiarities_tile.dart';
+import 'package:hotel_app/components/room_components/room_peculiarities_tile.dart';
+
 import 'package:hotel_app/pages/booking_page.dart';
 
-import '../models/room.dart';
+import '../../models/room.dart';
+import '../hotel_components/hotel_image_scroll_card.dart';
+
+
 
 class RoomWidget extends StatelessWidget {
   final Room room;

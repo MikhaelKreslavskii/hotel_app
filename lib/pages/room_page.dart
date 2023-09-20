@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_app/components/room_widget.dart';
+
 import 'package:hotel_app/data/room_bloc/room_bloc.dart';
 import 'package:hotel_app/models/room.dart';
 
+import '../components/room_components/room_widget.dart';
 import '../data/room_bloc/room_repository.dart';
 
 class RoomPage extends StatefulWidget {

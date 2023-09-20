@@ -2,16 +2,17 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:hotel_app/components/booking_customer_info_widget.dart';
-import 'package:hotel_app/components/booking_data_widget.dart';
-import 'package:hotel_app/components/booking_hotel_widget.dart';
-import 'package:hotel_app/components/booking_price.dart';
-import 'package:hotel_app/components/booking_tourist_widget.dart';
+
 import 'package:hotel_app/data/booking_bloc/booking_bloc.dart';
 import 'package:hotel_app/data/booking_bloc/booking_repository.dart';
 import 'package:hotel_app/pages/success_page.dart';
 import 'package:masked_text/masked_text.dart';
 
+import '../components/booking_components/booking_customer_info_widget.dart';
+import '../components/booking_components/booking_data_widget.dart';
+import '../components/booking_components/booking_hotel_widget.dart';
+import '../components/booking_components/booking_price.dart';
+import '../components/booking_components/booking_tourist_widget.dart';
 import '../models/booking.dart';
 
 class BookingPage extends StatefulWidget {

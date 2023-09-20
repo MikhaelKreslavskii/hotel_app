@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hotel_app/components/booking_data_tile.dart';
+import 'package:hotel_app/components/booking_components/booking_data_tile.dart';
 
-import '../models/booking.dart';
+
+import '../../models/booking.dart';
 
 class BookingDataWidget extends StatelessWidget {
   final Booking booking;
