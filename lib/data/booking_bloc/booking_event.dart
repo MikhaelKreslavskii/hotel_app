@@ -6,3 +6,4 @@ class BookingEvent{
 class LoadBooking extends BookingEvent{
 
 }
+

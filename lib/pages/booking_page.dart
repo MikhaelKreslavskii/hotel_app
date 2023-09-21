@@ -155,6 +155,19 @@ class _BookingPageState extends State<BookingPage> {
         ]),
       );
           }
+
+          if(state is BookingLoadingFailure)
+          {
+             return Center(child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Error with connection."),
+                    ElevatedButton(onPressed: (){
+                      bookingBloc.add(LoadBooking());
+                    }, child: Text("Try again"),)
+                  ],
+                ),);
+          }
           return Center(child: CircularProgressIndicator(),);
         },
       )

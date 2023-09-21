@@ -11,8 +11,13 @@ part 'room_state.dart';
 class RoomBloc extends Bloc<RoomEvent, RoomState> {
   RoomBloc() : super(RoomInitial()) {
     on<LoadRoom>((event, emit) async {
-     final roomList = await repository.getRoomsList();
-     emit(RoomLoaded(roomList: roomList));
+     try {
+  final roomList = await repository.getRoomsList();
+  emit(RoomLoaded(roomList: roomList));
+}  catch (e) {
+  emit(RoomLoadingFailure(exception: e));
+  // TODO
+}
       
     });
   }

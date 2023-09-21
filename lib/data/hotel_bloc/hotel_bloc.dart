@@ -9,8 +9,14 @@ part 'hotel_state.dart';
 class HotelBloc extends Bloc<HotelEvent, HotelState> {
   HotelBloc() : super(HotelInitial()) {
     on<LoadHotel>((event, emit) async {
-     final hotelList = await repository.getHotelList();
-     emit(HotelLoaded(hotelList: hotelList));
+     try {
+      emit(HotelLoading());
+  final hotelList = await repository.getHotelList();
+  emit(HotelLoaded(hotelList: hotelList));
+}  catch (e) {
+  emit(HotelLoadFailure(exception: e));
+  // TODO
+}
       
     });
   }

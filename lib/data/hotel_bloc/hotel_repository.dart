@@ -36,11 +36,12 @@ class HotelRepository {
             peculiarities: List<String>.from(cur_data["about_the_hotel"]["peculiarities"])
           ),
         );
-      
+      return hotelList;
     } catch (e) {
       log('$e');
+      throw Exception();
     }
 
-    return hotelList;
+    
   }
 }

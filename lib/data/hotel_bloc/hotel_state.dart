@@ -15,3 +15,9 @@ class HotelLoaded extends HotelState{
 
   HotelLoaded({required this.hotelList});
 }
+
+class HotelLoadFailure extends HotelState
+{
+  final Object? exception;
+  HotelLoadFailure({required this.exception});
+}

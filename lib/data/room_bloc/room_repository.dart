@@ -19,11 +19,13 @@ class RoomRepository {
       final data = response.data["rooms"] as List;
       roomList = data.map((room) => Room.fromJson(room)).toList();
         print(roomList.length);
+        return roomList;
       
     } catch (e) {
       log('$e');
+      throw Exception();
     }
 
-    return roomList;
+    
   }
 }

@@ -11,8 +11,15 @@ part 'booking_state.dart';
 class BookingBloc extends Bloc<BookingEvent, BookingState> {
   BookingBloc() : super(BookingInitial()) {
     on<LoadBooking>((event, emit) async {
-     final booking = await repository.getBooking();
-     emit(BookingLoaded(booking: booking));
+     try {
+      emit(BookingLoading());
+  final booking = await repository.getBooking();
+  emit(BookingLoaded(booking: booking));
+}  catch (e) {
+
+  emit(BookingLoadingFailure(exception: e));
+  // TODO
+}
       
     });
   }

@@ -64,6 +64,19 @@ class _RoomPageState extends State<RoomPage> {
           return RoomWidget(room:state.roomList[index]);
         }) );
           }
+
+          if(state is RoomLoadingFailure)
+          {
+            return Center(child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Error with connection."),
+                    ElevatedButton(onPressed: (){
+                      _roomBloc.add(LoadRoom());
+                    }, child: Text("Try again"),)
+                  ],
+                ),);
+          }
           return Center(child: CircularProgressIndicator());
         },
       )

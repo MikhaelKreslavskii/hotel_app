@@ -15,3 +15,9 @@ class RoomLoaded extends RoomState{
 
   RoomLoaded({required this.roomList});
 }
+
+class RoomLoadingFailure extends RoomState{
+
+final Object? exception;
+  RoomLoadingFailure({required this.exception});  
+}

@@ -15,3 +15,10 @@ class BookingLoaded extends BookingState{
 
   BookingLoaded({required this.booking});
 }
+
+class BookingLoadingFailure extends BookingState
+{
+  final Object? exception;
+
+  BookingLoadingFailure({required this.exception});
+}

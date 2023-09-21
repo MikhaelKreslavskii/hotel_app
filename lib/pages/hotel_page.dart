@@ -80,6 +80,18 @@ class _HotelPageState extends State<HotelPage> {
                   ],
                 ));
               }
+              if(state is HotelLoadFailure)
+              {
+                return Center(child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Error with connection."),
+                    ElevatedButton(onPressed: (){
+                      _hotelBloc.add(LoadHotel());
+                    }, child: Text("Try again"),)
+                  ],
+                ),);
+              }
               return Center(child: CircularProgressIndicator());
             },
           )
