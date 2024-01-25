@@ -10,7 +10,7 @@ class BookingPriceTile extends StatelessWidget {
     return  Padding(
             padding: const EdgeInsets.only(left: 16.0, top: 8, bottom: 8),
             child: Container(
-              ///width: 320,
+              
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -21,7 +21,7 @@ class BookingPriceTile extends StatelessWidget {
                         fontFamily: 'SF',
                         color: Color.fromARGB(255, 130, 135, 150)),
                   ),
-                 /// SizedBox(width: 50,),
+                 
                   SizedBox(
                     width: 103,
                     child: Text(

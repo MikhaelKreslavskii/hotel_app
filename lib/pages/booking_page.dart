@@ -33,7 +33,7 @@ class _BookingPageState extends State<BookingPage> {
     super.initState();
     
   }
-  /// List<String> tourists=["Первый"];
+  
   List<BookingTouristWidget> tourists = [];
   int tourist = 1;
   @override
@@ -116,7 +116,7 @@ class _BookingPageState extends State<BookingPage> {
                   ElevatedButton(
                       onPressed: () {
                         setState(() {
-                          /// tourists.add();
+                          
 
                           tourist++;
                         });
@@ -172,10 +172,7 @@ class _BookingPageState extends State<BookingPage> {
         },
       )
       
-      // ((booking==null))
-      
-      // ? Center(child: CircularProgressIndicator(),)
-      // : S
+     
     );
   }
  

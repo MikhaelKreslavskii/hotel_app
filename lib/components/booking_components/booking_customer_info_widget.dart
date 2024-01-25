@@ -48,8 +48,7 @@ class _BookingCustomerInfoState extends State<BookingCustomerInfo> {
 
                 mask: "+7(###) ###-##-##",
                 validator: validatorPhone,
-                ///autofillHints: ["+7(***) ***-**-**"],
-                ///initialValue: "+7(***) ***-**-**",
+                
                 decoration: InputDecoration(
                     labelText: "Номер телефона",
                     hintText: "+7(***) ***-**-**",
@@ -58,7 +57,7 @@ class _BookingCustomerInfoState extends State<BookingCustomerInfo> {
                     filled: true,
                     border: OutlineInputBorder(
 
-                        ///borderSide: BorderSide(),
+                        
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(15))),
               ),

@@ -12,7 +12,7 @@ class BookingRepository
     
       try {
   final response = await Dio()
-      .get("https://run.mocky.io/v3/e8868481-743f-4eb2-a0d7-2bc4012275c8");
+      .get("https://run.mocky.io/v3/75000507-da9a-43f8-a618-df698ea7176d");
   log('response ${response.data}');
   final data = response.data as Map<String, dynamic>;
   booking = Booking.fromJson(data);

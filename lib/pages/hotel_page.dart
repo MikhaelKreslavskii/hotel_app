@@ -96,48 +96,7 @@ class _HotelPageState extends State<HotelPage> {
             },
           )
 
-          // ((_hotelList == null) || (_hotelList!.isEmpty))
-          //     ? Center(child: CircularProgressIndicator())
-          //     : SingleChildScrollView(
-          //         child: Column(
-          //         children: [
-          //           HotelFirstWidget(hotel: _hotelList!.first),
-          //           SizedBox(
-          //             height: 8,
-          //           ),
-          //           HotelSecondWidget(hotel:_hotelList!.first),
-          //           SizedBox(
-          //             height: 8,
-          //           ),
-          //           SizedBox(
-          //               width: 343,
-          //               height: 48,
-          //               child: Builder(builder: (context) {
-          //                 return ElevatedButton(
-          //                   onPressed: () {
-          //                     Navigator.of(context).push(
-          //                       MaterialPageRoute(
-          //                           builder: (context) => const RoomPage()),
-          //                     );
-          //                   },
-          //                   child: Text(
-          //                     "К выбору номера",
-          //                     style: TextStyle(
-          //                       fontSize: 16,
-          //                       fontFamily: 'SF',
-          //                       fontWeight: FontWeight.w500,
-          //                     ),
-          //                   ),
-          //                   style: ButtonStyle(
-          //                     shape: MaterialStateProperty.all<
-          //                         RoundedRectangleBorder>(RoundedRectangleBorder(
-          //                       borderRadius: BorderRadius.circular(15.0),
-          //                     )),
-          //                   ),
-          //                 );
-          //               }))
-          //         ],
-          //       )),
+          
           ),
     );
   }

@@ -24,7 +24,7 @@ class _BookingPriceState extends State<BookingPrice> {
             child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-              ///mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              
               children: [
                 BookingPriceTile(
                     nameField: "Тур", descriptionField: "${widget.booking.tourPrice} ₽"),
